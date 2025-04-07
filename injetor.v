@@ -6,5 +6,11 @@ module injetor(
 );
 
 // implemente seu código aqui
+always @(entrada, n, erro) begin
+  saida = entrada;
+  if(erro && (n < 15)) begin
+    saida[n] = ~saida[n]; 
+  end
+end
 
 endmodule
